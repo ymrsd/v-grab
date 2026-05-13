@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="theme-color" content="#0b0e14" />
+  <meta name="background-color" content="#0b0e14" />
+  <meta name="display" content="standalone" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Video Snapper" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Video Snapper Pro" />
+  <meta name="msapplication-TileColor" content="#00ff88" />
+  <meta name="msapplication-navbutton-color" content="#0b0e14" />
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300ff88'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%230b0e14'%3E▶%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%2300ff88'/%3E%3Ctext x='90' y='125' font-size='100' text-anchor='middle' fill='%230b0e14'%3E▶%3C/text%3E%3C/svg%3E" />
+  <link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300ff88'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%230b0e14'%3E▶%3C/text%3E%3C/svg%3E" color="#00ff88" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.cobalt.tools" crossorigin />
+  <link rel="dns-prefetch" href="https://api.cobalt.tools" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- SEO Meta Tags -->
+  <title>Video Snapper Pro | Free TikTok, Instagram Reels & YouTube Shorts Downloader</title>
+  <meta name="description" content="Download TikTok videos, Instagram Reels, and YouTube Shorts without watermark in HD & 4K quality. Free online video downloader. No registration required. Fast, secure, and unlimited downloads with Video Snapper Pro." />
+  <meta name="keywords" content="TikTok downloader, Instagram Reels downloader, YouTube Shorts downloader, no watermark video download, HD video downloader, 4K video saver, social media video download, free video downloader, watermark remover, video snapper, online video saver" />
+  <meta name="author" content="Video Snapper Pro" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating" content="general" />
+  <meta name="distribution" content="global" />
+  <meta name="language" content="English" />
+  <meta name="copyright" content="© 2026 Video Snapper Pro. All rights reserved." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://videosnapper.pro" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://videosnapper.pro" />
+  <meta property="og:site_name" content="Video Snapper Pro" />
+  <meta property="og:title" content="Video Snapper Pro | Free TikTok, Reels & Shorts Downloader" />
+  <meta property="og:description" content="Download social media videos without watermark in HD & 4K. Fast, free, and secure. Supports TikTok, Instagram Reels, and YouTube Shorts." />
+  <meta property="og:image" content="https://videosnapper.pro/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Video Snapper Pro - Free Video Downloader Interface" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@videosnapperpro" />
+  <meta name="twitter:creator" content="@videosnapperpro" />
+  <meta name="twitter:title" content="Video Snapper Pro | Free TikTok, Reels & Shorts Downloader" />
+  <meta name="twitter:description" content="Download social media videos without watermark in HD & 4K. Fast, free, and secure." />
+  <meta name="twitter:image" content="https://videosnapper.pro/twitter-card.jpg" />
+  <meta name="twitter:image:alt" content="Video Snapper Pro App Interface" />
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Video Snapper Pro",
+    "url": "https://videosnapper.pro",
+    "description": "Free online video downloader for TikTok, Instagram Reels, and YouTube Shorts without watermark.",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "15240"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Video Snapper Pro"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to download TikTok videos without watermark?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Copy the TikTok video link, paste it into Video Snapper Pro's search bar, and click Download. Your video will be saved without watermark in HD quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Video Snapper Pro free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Video Snapper Pro offers a free tier with 20 downloads. We also provide a free trial until August 1, 2026 with unlimited downloads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Video Snapper Pro support Instagram Reels and YouTube Shorts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! Video Snapper Pro supports TikTok, Instagram Reels, YouTube Shorts, and many other social media platforms."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b0e14;
+      margin: 0;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    /* Splash screen for PWA */
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #0b0e14;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.5s ease;
+    }
+    #splash.hidden { opacity: 0; pointer-events: none; }
+    #splash .splash-logo {
+      font-size: 60px;
+      color: #00ff88;
+      animation: splashPulse 1.5s ease infinite;
+    }
+    #splash .splash-text {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
+    #splash .splash-sub {
+      color: #8b949e;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    @keyframes splashPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <!-- PWA Splash Screen -->
+  <div id="splash">
+    <div class="splash-logo">▶</div>
+    <div class="splash-text">VIDEO SNAPPER</div>
+    <div class="splash-sub">Loading your experience...</div>
+  </div>
+
+  <noscript>
+    <div style="padding:40px;text-align:center;color:#fff;background:#0b0e14;font-family:Poppins,sans-serif;">
+      <h1>⚠ JavaScript Required</h1>
+      <p>Video Snapper Pro requires JavaScript to function. Please enable JavaScript in your browser settings.</p>
+    </div>
+  </noscript>
+
+  <div id="root"></div>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js')
+          .then(function(registration) {
+            console.log('✅ Service Worker registered:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('❌ Service Worker registration failed:', error);
+          });
+      });
+    }
+
+    // Hide splash screen after app loads
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var splash = document.getElementById('splash');
+        if (splash) {
+          splash.classList.add('hidden');
+          setTimeout(function() { splash.remove(); }, 500);
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offline - Video Snapper Pro</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0b0e14;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .offline-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    h1 { font-size: 2rem; margin-bottom: 15px; color: #00ff88; }
+    p { color: #8b949e; font-size: 1.1rem; max-width: 400px; line-height: 1.6; margin-bottom: 30px; }
+    .retry-btn {
+      background: linear-gradient(135deg, #00ff88, #00cc6a);
+      color: #000;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    .retry-btn:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3); }
+    .status {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: rgba(255, 165, 0, 0.1);
+      border: 1px solid rgba(255, 165, 0, 0.3);
+      border-radius: 20px;
+      color: #ffa500;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-icon">📡</div>
+  <h1>You're Offline</h1>
+  <p>It looks like you've lost your internet connection. Video Snapper Pro needs a connection to download videos. Please check your network and try again.</p>
+  <button class="retry-btn" onclick="window.location.reload()">🔄 Retry Connection</button>
+  <div class="status">⚡ Some features may be limited while offline</div>
+</body>
+</html>
