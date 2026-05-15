@@ -223,7 +223,7 @@
     .ad-modal-sub {
       color: #8b949e;
       font-size: 13px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       font-family: 'Inter', sans-serif;
       line-height: 1.5;
     }
@@ -244,7 +244,7 @@
       height: 4px;
       background: #0b0e14;
       border-radius: 2px;
-      margin: 16px 0;
+      margin: 12px 0;
       overflow: hidden;
     }
     .download-progress-fill {
@@ -252,12 +252,26 @@
       width: 0%;
       background: linear-gradient(90deg, #00ff88, #00cc6a);
       border-radius: 2px;
-      animation: progressMove 2s ease-in-out infinite;
+      animation: progressMove 5s ease-in-out forwards;
     }
     @keyframes progressMove {
-      0% { width: 0%; opacity: 1; }
-      50% { width: 70%; opacity: 1; }
-      100% { width: 100%; opacity: 0.5; }
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    /* Countdown Timer */
+    .countdown-timer {
+      color: #00ff88;
+      font-size: 28px;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      margin: 8px 0;
+      text-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    }
+    .countdown-label {
+      color: #8b949e;
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 12px;
     }
   </style>
 </head>
@@ -286,11 +300,15 @@
         <span>Preparing Download...</span>
       </div>
       <div class="ad-modal-sub">
-        Please wait while we generate your download link.<br>
-        Your video will start automatically.
+        Please wait while we prepare your video.<br>
+        Download will start automatically.
       </div>
       
-      <!-- Animated progress bar -->
+      <!-- Countdown Timer Display -->
+      <div class="countdown-label">Ad closing in</div>
+      <div class="countdown-timer" id="adCountdown">5</div>
+      
+      <!-- Animated progress bar (5 seconds duration) -->
       <div class="download-progress-bar">
         <div class="download-progress-fill"></div>
       </div>
@@ -338,19 +356,34 @@
       var adLoaded = false;
       var modal = document.getElementById('downloadAdModal');
       var container = document.getElementById('dynamicAdContainer');
+      var countdownEl = document.getElementById('adCountdown');
+      var countdownInterval = null;
 
       // Global function: Call this from React when download starts
       window.showDownloadAd = function() {
         if (!modal || !container) return;
         
+        // Reset countdown
+        if (countdownEl) countdownEl.textContent = '5';
+        
         // Show modal
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+        
+        // Start countdown animation
+        var seconds = 5;
+        countdownInterval = setInterval(function() {
+          seconds--;
+          if (countdownEl) countdownEl.textContent = seconds;
+          if (seconds <= 0) {
+            clearInterval(countdownInterval);
+          }
+        }, 1000);
         
         // Load ads only once
         if (!adLoaded) {
           adLoaded = true;
-          container.innerHTML = ''; // Clear loading text
+          container.innerHTML = '';
           
           // Inject Ad 1: HighPerformanceFormat Banner
           var opts = document.createElement('script');
@@ -376,19 +409,17 @@
         if (!modal) return;
         modal.classList.remove('active');
         document.body.style.overflow = '';
-      };
-
-      // Auto-hide ad after delay
-      window.autoHideDownloadAd = function(delayMs) {
-        delayMs = delayMs || 8000;
-        setTimeout(function() {
-          window.hideDownloadAd();
-        }, delayMs);
+        if (countdownInterval) {
+          clearInterval(countdownInterval);
+          countdownInterval = null;
+        }
       };
 
       // Close modal when clicking outside the box
       modal.addEventListener('click', function(e) {
         if (e.target === modal) {
+          // Don't allow closing before 5 seconds for better ad revenue
+          // But if user really wants to close, they can
           window.hideDownloadAd();
         }
       });
