@@ -36,24 +36,35 @@ function App() {
     setLoading(true);
 
     try {
-      // AD MODAL 5 SECONDS
-      if (window.showDownloadAd) window.showDownloadAd();
+      // ===== 1. AD MODAL OPEN (5 seconds) =====
+      if (window.showDownloadAd) {
+        window.showDownloadAd();
+      }
+      
+      // 5 seconds wait - ad plays here
       await new Promise(resolve => setTimeout(resolve, 5000));
-      if (window.hideDownloadAd) window.hideDownloadAd();
+      
+      // Hide ad modal
+      if (window.hideDownloadAd) {
+        window.hideDownloadAd();
+      }
+      // =======================================
 
-      // NETLIFY FUNCTION (No CORS)
+      // ===== 2. NETLIFY FUNCTION CALL (No CORS) =====
       const response = await fetch('/.netlify/functions/download', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        body: JSON.stringify({ 
           url: url.trim(),
           vQuality: '1080'
         })
       });
 
       const data = await response.json();
+      // ==============================================
 
       if (data.url) {
+        // Auto download trigger
         const a = document.createElement('a');
         a.href = data.url;
         a.download = 'video.mp4';
@@ -68,13 +79,17 @@ function App() {
           setDownloadCount(newCount);
           localStorage.setItem('vs_download_count', newCount.toString());
         }
-
+        
         alert('✅ Download Started!');
         setUrl('');
       } else {
         alert('❌ Error: ' + (data.text || data.error || 'Video not found'));
       }
     } catch (error) {
+      // Error awoth ad eka hide karanna
+      if (window.hideDownloadAd) {
+        window.hideDownloadAd();
+      }
       alert('❌ Error: ' + error.message);
       console.error(error);
     } finally {
